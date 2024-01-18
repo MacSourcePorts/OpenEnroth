@@ -126,7 +126,11 @@ bool OpenGLShader::checkCompileErrors(int shader, const std::string &name, const
 int OpenGLShader::load(const std::string &name, const std::string &filename, int type, bool OpenGLES, bool nonFatal) {
     std::string directory = "shaders";
     std::string typeName = shaderTypeToName(type);
+#ifdef __APPLE__
+    std::string path = makeDataPathMac(directory, filename + "." + shaderTypeToExtension(type));
+#else
     std::string path = makeDataPath(directory, filename + "." + shaderTypeToExtension(type));
+#endif
 
     try {
         std::string shaderString;

@@ -144,3 +144,7 @@ int64_t SdlPlatform::tickCount() const {
 std::unique_ptr<Platform> Platform::createStandardPlatform(Logger *logger) {
     return std::make_unique<SdlPlatform>(logger);
 }
+
+char* SdlPlatform::basePath() const {
+    return SDL_GetBasePath();
+}

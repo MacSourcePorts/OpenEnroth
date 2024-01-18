@@ -36,3 +36,7 @@ void ProxyPlatform::showMessageBox(const std::string &title, const std::string &
 int64_t ProxyPlatform::tickCount() const {
     return nonNullBase()->tickCount();
 }
+
+char* ProxyPlatform::basePath() const {
+    return nonNullBase()->basePath();
+}

@@ -49,3 +49,4 @@ dist
 .gradle
 .cxx
 local.properties
+.DS_Store

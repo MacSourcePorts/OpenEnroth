@@ -23,6 +23,7 @@ class NullPlatform : public Platform {
     virtual std::vector<Recti> displayGeometries() const override;
     virtual void showMessageBox(const std::string &title, const std::string &message) const override;
     virtual int64_t tickCount() const override;
+    virtual char* basePath() const override;
 
  private:
     std::unique_ptr<NullPlatformSharedState> _state;

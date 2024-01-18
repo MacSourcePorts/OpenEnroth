@@ -43,3 +43,7 @@ void NullPlatform::showMessageBox(const std::string &title, const std::string &m
 int64_t NullPlatform::tickCount() const {
     return 0; // Time's not flowing in null platform.
 }
+
+char* NullPlatform::basePath() const {
+    return NULL;
+}

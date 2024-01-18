@@ -136,6 +136,11 @@ class Platform {
      * @return                          Current value of a monotonic clock in milliseconds.
      */
     virtual int64_t tickCount() const = 0;
+
+    /**
+     * @return                          Base path.
+     */
+    virtual char* basePath() const = 0;
 };
 
 /**

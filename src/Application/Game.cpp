@@ -93,8 +93,13 @@ void ShowMM7IntroVideo_and_LoadingScreen();
 void initDataPath(Platform *platform, const std::string &dataPath) {
     std::string missing_file;
 
+#ifdef __APPLE__
+    if (validateDataPathMac(dataPath, &missing_file, platform)) {
+#else
     if (validateDataPath(dataPath, &missing_file)) {
+#endif
         setDataPath(dataPath);
+        setBasePath(platform);
 
         std::string savesPath = makeDataPath("saves");
         if (!std::filesystem::exists(savesPath)) {
